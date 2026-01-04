@@ -1,7 +1,5 @@
 # WattWise
-Absolutely 👍
-Here’s a polished, professional, production-grade README tailored specifically for your app WattWise.
-You can use this as-is for GitHub, portfolio, or client demos.
+
 
 ⚡ WattWise
 Smart Energy Usage Awareness
