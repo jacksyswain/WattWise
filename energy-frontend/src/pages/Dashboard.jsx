@@ -4,6 +4,7 @@ import {
   fetchTodayUsage,
   fetchMonthlyBill,
   fetchMonthlyChart,
+  logoutUser,
 } from "../services/api";
 
 import {
@@ -60,9 +61,24 @@ export default function Dashboard() {
     loadData();
   }, []);
 
+  /* 🔐 Logout */
+  const handleLogout = () => {
+    logoutUser();
+    window.location.href = "/login";
+  };
+
   return (
-    <div className="p-8">
-      <h1 className="text-3xl font-bold mb-8">⚡ Energy Dashboard</h1>
+    <div className="p-8 min-h-screen bg-gray-50">
+      {/* ================= HEADER ================= */}
+      <div className="flex justify-between items-center mb-8">
+        <h1 className="text-3xl font-bold">⚡ WattWise Dashboard</h1>
+        <button
+          onClick={handleLogout}
+          className="bg-red-500 hover:bg-red-600 text-white px-4 py-2 rounded-lg text-sm"
+        >
+          Logout
+        </button>
+      </div>
 
       {/* ================= CARDS ================= */}
       <div className="grid grid-cols-1 md:grid-cols-4 gap-6 mb-10">
@@ -116,14 +132,14 @@ export default function Dashboard() {
             <div className="space-y-3">
               <button
                 className="w-full bg-blue-600 text-white py-2 rounded-lg hover:bg-blue-700 transition"
-                onClick={() => alert("UPI payment coming soon")}
+                onClick={() => alert("UPI payment integration coming soon")}
               >
                 Pay with UPI
               </button>
 
               <button
                 className="w-full bg-purple-600 text-white py-2 rounded-lg hover:bg-purple-700 transition"
-                onClick={() => alert("Card payment coming soon")}
+                onClick={() => alert("Card / Netbanking integration coming soon")}
               >
                 Pay with Card / Netbanking
               </button>

@@ -8,6 +8,7 @@ import livePowerRoutes from "./routes/livePower.routes.js";
 import billingRoutes from "./routes/billing.routes.js";
 import chartRoutes from "./routes/chart.routes.js";
 
+
 const app = express();
 app.use(cors());
 app.use(express.json());
@@ -19,6 +20,7 @@ app.use("/api/usage", usageRoutes);
 app.use("/api/live-power", livePowerRoutes);
 app.use("/api/billing", billingRoutes);
 app.use("/api/chart", chartRoutes);
+
 
 
 
